@@ -1,0 +1,9 @@
+<%= link_to "Create a new song!", new_song_path, class: "new_song_link" %>
+
+<h1> <%= session[:hits] %></h1>
+
+<% @songs.each do |song| %>
+
+<h3><%= link_to song.title, song_path(song), id: "song" %></h3>
+
+<% end %>

@@ -1,0 +1,17 @@
+<h2> Welcome <%= current_user.name %> </h2>
+
+<h3> <%= current_user.name %>'s Playlist </h3>
+
+<% @songs.each do |song| %>
+  <p>
+    <%= song.title %>
+    <%= button_to "Edit", edit_song_path(song), method: :get %>
+    <%= button_to "Delete", song_path(song), method: :delete %>
+  </p>
+  <p>
+    <%= song.artist %>
+  </p>
+<% end %>
+
+<%= button_to "Add song", new_song_path, method: :get %>
+<%= button_to "Delete all", delete_all_path, method: :delete %>
